@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutAttendanceReportRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8FAFC"
+    android:padding="16dp">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:id="@+id/layoutAttendanceReportHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/bg_status_strip">
+
+        <TextView
+            android:id="@+id/tvAttendanceReportTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attendance Reports"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/tvAttendanceReportSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select a date to view workforce status"
+            android:textSize="14sp"
+            android:textColor="#E0E7FF"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <!-- DATE SELECTOR -->
+    <TextView
+        android:id="@+id/tvSelectDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Date"
+        android:padding="14dp"
+        android:background="@drawable/bg_input"
+        android:textColor="#374151"
+        android:layout_marginTop="16dp"/>
+
+    <!-- LIST -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAttendanceReport"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

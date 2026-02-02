@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollHRDashboard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FAFB"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/layoutHRDashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- HEADER -->
+        <LinearLayout
+            android:id="@+id/layoutHRHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/bg_status_strip">
+
+            <TextView
+                android:id="@+id/tvHRTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HR Control Panel"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvHRSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage people and operations"
+                android:textSize="14sp"
+                android:textColor="#E0E7FF"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- PENDING APPROVALS -->
+        <LinearLayout
+            android:id="@+id/actionLeaveApprovals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/bg_action_tile">
+
+            <TextView
+                android:id="@+id/tvLeaveApprovalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Leave Approvals"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#111827" />
+
+            <TextView
+                android:id="@+id/tvLeaveApprovalSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Review pending leave requests"
+                android:textSize="13sp"
+                android:textColor="#6B7280"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- EMPLOYEE MANAGEMENT -->
+        <LinearLayout
+            android:id="@+id/actionEmployees"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/bg_action_tile">
+
+            <TextView
+                android:id="@+id/tvEmployeeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Employees"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#111827" />
+
+            <TextView
+                android:id="@+id/tvEmployeeSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View and manage workforce"
+                android:textSize="13sp"
+                android:textColor="#6B7280"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- POLICIES -->
+        <LinearLayout
+            android:id="@+id/actionPolicies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/bg_action_tile">
+
+            <TextView
+                android:id="@+id/tvPolicyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Policies"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#111827" />
+
+            <TextView
+                android:id="@+id/tvPolicySub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Company rules and compliance"
+                android:textSize="13sp"
+                android:textColor="#6B7280"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- ATTENDANCE REPORT -->
+        <LinearLayout
+            android:id="@+id/actionAttendanceReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/bg_action_tile">
+
+            <TextView
+                android:id="@+id/tvAttendanceReportTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attendance Reports"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#111827" />
+
+            <TextView
+                android:id="@+id/tvAttendanceReportSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analyze daily and monthly logs"
+                android:textSize="13sp"
+                android:textColor="#6B7280"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
