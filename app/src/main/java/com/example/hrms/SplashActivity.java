@@ -5,48 +5,42 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.animation.AlphaAnimation;
-import android.view.animation.ScaleAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hrms.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static final int SPLASH_DURATION = 2200; // 2.2 seconds
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        ImageView logo = findViewById(R.id.imgLogo);
+        mAuth = FirebaseAuth.getInstance();
 
-        // Scale animation (subtle, professional)
-        ScaleAnimation scaleAnimation = new ScaleAnimation(
-                0.85f, 1.0f,
-                0.85f, 1.0f,
-                ScaleAnimation.RELATIVE_TO_SELF, 0.5f,
-                ScaleAnimation.RELATIVE_TO_SELF, 0.5f
-        );
-        scaleAnimation.setDuration(900);
-        scaleAnimation.setFillAfter(true);
+        new Handler(Looper.getMainLooper()).postDelayed(this::navigateNext, 2500);
+    }
 
-        // Fade animation
-        AlphaAnimation fadeAnimation = new AlphaAnimation(0f, 1f);
-        fadeAnimation.setDuration(900);
-        fadeAnimation.setFillAfter(true);
+    private void navigateNext() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
-        // Start animations
-        logo.startAnimation(scaleAnimation);
-        logo.startAnimation(fadeAnimation);
-
-        // Move to Login screen after delay
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-            startActivity(intent);
-            finish();
-        }, SPLASH_DURATION);
+        if (currentUser == null) {
+            // User not logged in
+            startActivity(new Intent(this, LoginActivity.class));
+        } else {
+            // User logged in → role check later
+            startActivity(new Intent(this, LoginActivity.class));
+            // (Dashboard routing will be added after login screen)
+        }
+        finish();
     }
 }
