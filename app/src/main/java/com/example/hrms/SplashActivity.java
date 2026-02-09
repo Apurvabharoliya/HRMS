@@ -9,6 +9,8 @@ import android.view.animation.Animation;
 import android.widget.ImageView;
 
 
+import com.google.firebase.FirebaseApp;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hrms.R;
@@ -42,5 +44,17 @@ public class SplashActivity extends AppCompatActivity {
             // (Dashboard routing will be added after login screen)
         }
         finish();
+        FirebaseApp.initializeApp(this);
+
+        new Handler().postDelayed(() -> {
+            if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+                // User already logged in
+                startActivity(new Intent(this, LoginActivity.class));
+                // role routing will be added later
+            } else {
+                startActivity(new Intent(this, LoginActivity.class));
+            }
+            finish();
+        }, 2000);
     }
 }

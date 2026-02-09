@@ -9,9 +9,6 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.hrms" />
-                  <option name="mobileSdkAppId" value="1:893644888636:android:fa4a21d7dee3709dfd8139" />
-                  <option name="projectId" value="hrms-workzen" />
-                  <option name="projectNumber" value="893644888636" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
