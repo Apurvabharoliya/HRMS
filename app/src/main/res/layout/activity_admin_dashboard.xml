@@ -1,161 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scrollAdminDashboard"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8FAFC"
-    android:fillViewport="true">
+    android:background="#F4F6F8"
+    tools:context=".AdminDashboardActivity">
 
-    <LinearLayout
-        android:id="@+id/layoutAdminDashboard"
-        android:layout_width="match_parent"
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:text="Admin Dashboard"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- ADMIN HEADER -->
-        <LinearLayout
-            android:id="@+id/layoutAdminHeader"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:background="@drawable/bg_admin_strip">
+    <!-- Bar Chart -->
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:id="@+id/tvAdminTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Admin Control Center"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white" />
+    <!-- Dashboard Cards -->
+    <GridLayout
+        android:id="@+id/gridDashboard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/barChart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-            <TextView
-                android:id="@+id/tvAdminSubtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="System governance and access control"
-                android:textSize="14sp"
-                android:textColor="#E5E7EB"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-        <!-- ROLE MANAGEMENT -->
-        <LinearLayout
-            android:id="@+id/actionRoles"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:background="@drawable/bg_action_tile">
+        <!-- Manage Users -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardManageUsers"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:layout_columnWeight="1">
 
             <TextView
-                android:id="@+id/tvRoleTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Role Management"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Manage Users"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#111827" />
+                android:gravity="center"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Leave Requests -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLeaveRequests"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:layout_columnWeight="1">
 
             <TextView
-                android:id="@+id/tvRoleSub"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Assign Admin, HR, Employee roles"
-                android:textSize="13sp"
-                android:textColor="#6B7280"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-        <!-- ORGANIZATION SETTINGS -->
-        <LinearLayout
-            android:id="@+id/actionOrganization"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:background="@drawable/bg_action_tile">
-
-            <TextView
-                android:id="@+id/tvOrgTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Organization Setup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Leave Requests"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#111827" />
+                android:gravity="center"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Attendance -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAttendance"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:layout_columnWeight="1">
 
             <TextView
-                android:id="@+id/tvOrgSub"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Company info, departments, structure"
-                android:textSize="13sp"
-                android:textColor="#6B7280"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-        <!-- SYSTEM POLICIES -->
-        <LinearLayout
-            android:id="@+id/actionSystemPolicies"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:background="@drawable/bg_action_tile">
-
-            <TextView
-                android:id="@+id/tvSystemPolicyTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="System Policies"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Attendance"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#111827" />
+                android:gravity="center"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Reports -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardReports"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:layout_columnWeight="1">
 
             <TextView
-                android:id="@+id/tvSystemPolicySub"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Global rules and compliance"
-                android:textSize="13sp"
-                android:textColor="#6B7280"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-        <!-- LOGOUT -->
-        <LinearLayout
-            android:id="@+id/actionLogout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:background="@drawable/bg_logout_tile">
-
-            <TextView
-                android:id="@+id/tvLogoutTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Logout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Reports"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#DC2626" />
+                android:gravity="center"/>
+        </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/tvLogoutSub"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Securely exit admin session"
-                android:textSize="13sp"
-                android:textColor="#991B1B"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
+    </GridLayout>
 
-    </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
