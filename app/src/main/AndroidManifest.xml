@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HRMS">
         <activity
+            android:name=".AddUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".PolicyListActivity"
             android:exported="false" />
         <activity

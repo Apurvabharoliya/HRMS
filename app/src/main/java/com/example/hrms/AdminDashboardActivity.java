@@ -22,7 +22,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         LinearLayout actionLogout = findViewById(R.id.actionLogout);
 
         actionRoles.setOnClickListener(v ->
-                startActivity(new Intent(this, RoleManagementActivity.class)));
+                startActivity(new Intent(this, AddUserActivity.class)));
 
         actionOrg.setOnClickListener(v ->
                 startActivity(new Intent(this, OrganizationSetupActivity.class)));
