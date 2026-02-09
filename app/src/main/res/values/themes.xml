@@ -1,9 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.HRMS" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Theme.HRMS" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#2F80ED</item>
+        <item name="colorPrimaryVariant">#1C5ED5</item>
+        <item name="colorSecondary">#27AE60</item>
+        <item name="android:windowBackground">#F4F6F8</item>
     </style>
-
-    <style name="Theme.HRMS" parent="Base.Theme.HRMS" />
 </resources>

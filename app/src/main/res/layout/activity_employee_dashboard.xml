@@ -1,170 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scrollEmployeeDashboard"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8FAFC"
-    android:fillViewport="true">
+    android:background="#F4F6F8">
 
     <LinearLayout
-        android:id="@+id/layoutEmployeeDashboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- ================= LIVE STATUS STRIP ================= -->
-        <LinearLayout
-            android:id="@+id/layoutStatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="@drawable/bg_status_strip"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tvGreeting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Good Morning"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:id="@+id/tvWorkStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="You are not punched in"
-                android:textSize="14sp"
-                android:textColor="#E0E7FF"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-        <!-- ================= WORKDAY PROGRESS ================= -->
-        <LinearLayout
-            android:id="@+id/layoutWorkday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp">
-
-            <TextView
-                android:id="@+id/tvWorkdayTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Today’s Workday"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#111827" />
-
-            <ProgressBar
-                android:id="@+id/progressWorkday"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_marginTop="8dp"
-                android:max="8"
-                android:progress="0" />
-        </LinearLayout>
-
-        <!-- ================= ACTIONS HEADER ================= -->
+        <!-- Header -->
         <TextView
-            android:id="@+id/tvActionsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Actions"
-            android:textSize="16sp"
+            android:text="Employee Dashboard"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="#111827"
-            android:layout_marginTop="24dp" />
+            android:layout_marginBottom="16dp"/>
 
-        <!-- ================= ACTION: PUNCH ================= -->
+        <!-- PERSONAL ANALYTICS -->
         <LinearLayout
-            android:id="@+id/actionPunch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:padding="16dp"
-            android:orientation="vertical"
-            android:background="@drawable/bg_action_tile">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvPunchTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Punch In / Out"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#111827" />
+            <!-- Attendance -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_margin="6dp"
+                android:cardCornerRadius="20dp">
 
-            <TextView
-                android:id="@+id/tvPunchSub"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Start or end your workday"
-                android:textSize="13sp"
-                android:textColor="#6B7280"
-                android:layout_marginTop="4dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvAttendancePercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textSize="26sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Attendance"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Leaves -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_margin="6dp"
+                android:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvLeaveBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="26sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leaves Left"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
-        <!-- ================= ACTION: LEAVE ================= -->
-        <LinearLayout
-            android:id="@+id/actionLeave"
+        <!-- TODO SECTION -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Tasks"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:padding="16dp"
-            android:orientation="vertical"
-            android:background="@drawable/bg_action_tile">
+            android:cardCornerRadius="16dp">
 
-            <TextView
-                android:id="@+id/tvLeaveTitle"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Request Leave"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#111827" />
+                android:orientation="vertical"
+                android:padding="12dp">
 
-            <TextView
-                android:id="@+id/tvLeaveSub"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Plan time off responsibly"
-                android:textSize="13sp"
-                android:textColor="#6B7280"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Punch in before 10 AM"/>
 
-        <!-- ================= ACTION: ATTENDANCE ================= -->
-        <LinearLayout
-            android:id="@+id/actionAttendance"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Submit weekly report"
+                    android:layout_marginTop="6dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- AI BUTTON -->
+        <Button
+            android:id="@+id/btnAI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:padding="16dp"
-            android:orientation="vertical"
-            android:background="@drawable/bg_action_tile">
+            android:text="Ask AI Assistant"
+            android:layout_marginTop="20dp"/>
 
-            <TextView
-                android:id="@+id/tvAttendanceTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Attendance Insights"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#111827" />
-
-            <TextView
-                android:id="@+id/tvAttendanceSub"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="View patterns and history"
-                android:textSize="13sp"
-                android:textColor="#6B7280"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
+        <!-- KEEP EXISTING EMPLOYEE BUTTONS BELOW -->
+        <!-- Example -->
+        <!--
+        <Button
+            android:id="@+id/btnPunch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Punch In / Out"/>
+        -->
 
     </LinearLayout>
 </ScrollView>

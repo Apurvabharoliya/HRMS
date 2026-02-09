@@ -5,6 +5,11 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.content.Intent;
+import android.widget.TextView;
+import android.widget.Button;
+import com.example.hrms.ai.AIAssistantActivity;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +23,19 @@ public class EmployeeDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_dashboard);
         SessionGuard.enforcePunch(this);
+        TextView tvAttendancePercent = findViewById(R.id.tvAttendancePercent);
+        TextView tvLeaveBalance = findViewById(R.id.tvLeaveBalance);
+        Button btnAI = findViewById(R.id.btnAI);
+
+        // Temporary static data
+        tvAttendancePercent.setText("92%");
+        tvLeaveBalance.setText("6");
+
+        btnAI.setOnClickListener(v -> {
+            Intent intent = new Intent(EmployeeDashboardActivity.this, AIAssistantActivity.class);
+            startActivity(intent);
+        });
+
 
         tvWorkStatus = findViewById(R.id.tvWorkStatus);
         progressWorkday = findViewById(R.id.progressWorkday);
