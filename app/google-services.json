@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "893644888636",
-    "project_id": "hrms-workzen",
-    "storage_bucket": "hrms-workzen.firebasestorage.app"
+    "project_number": "853991683657",
+    "project_id": "hrms-f723f83d",
+    "storage_bucket": "hrms-f723f83d.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:893644888636:android:fa4a21d7dee3709dfd8139",
+        "mobilesdk_app_id": "1:853991683657:android:85b6475902d18f788cf198",
         "android_client_info": {
           "package_name": "com.example.hrms"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDQnIJCT4ua6kAAkkkUZWtCnwC6qmbOTho"
+          "current_key": "AIzaSyDfH_4VdddwoqxttZqGlgYDh2OaRhlZmow"
         }
       ],
       "services": {
