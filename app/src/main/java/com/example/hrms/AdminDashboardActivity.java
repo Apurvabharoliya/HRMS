@@ -12,6 +12,18 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import android.content.Intent;
+import android.widget.TextView;
+import android.widget.Button;
+import com.example.hrms.ai.AIAssistantActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import com.example.hrms.todo.TodoAdapter;
+import com.example.hrms.todo.TodoModel;
+import java.util.ArrayList;
+import java.util.List;
+
+
 
 import java.util.ArrayList;
 
@@ -24,6 +36,19 @@ public class AdminDashboardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
+        TextView tvTotalEmployees = findViewById(R.id.tvTotalEmployees);
+        TextView tvPendingLeaves = findViewById(R.id.tvPendingLeaves);
+        Button btnAI = findViewById(R.id.btnAI);
+
+        // Temporary static values (Firebase later)
+        tvTotalEmployees.setText("25");
+        tvPendingLeaves.setText("7");
+
+        btnAI.setOnClickListener(v -> {
+            Intent intent = new Intent(AdminDashboardActivity.this, AIAssistantActivity.class);
+            startActivity(intent);
+        });
+
 
         // Initialize views
         barChart = findViewById(R.id.barChart);
@@ -31,6 +56,17 @@ public class AdminDashboardActivity extends AppCompatActivity {
         cardLeaveRequests = findViewById(R.id.cardLeaveRequests);
         cardAttendance = findViewById(R.id.cardAttendance);
         cardReports = findViewById(R.id.cardReports);
+
+        RecyclerView recyclerTodo = findViewById(R.id.recyclerTodo);
+
+        List<TodoModel> todoList = new ArrayList<>();
+        todoList.add(new TodoModel("Review leave requests", "PENDING"));
+        todoList.add(new TodoModel("Approve new employees", "PENDING"));
+
+        TodoAdapter todoAdapter = new TodoAdapter(todoList);
+        recyclerTodo.setLayoutManager(new LinearLayoutManager(this));
+        recyclerTodo.setAdapter(todoAdapter);
+
 
         setupBarChart();
         setupClickListeners();

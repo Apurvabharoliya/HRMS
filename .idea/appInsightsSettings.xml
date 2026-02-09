@@ -9,9 +9,6 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.hrms" />
-                  <option name="mobileSdkAppId" value="1:853991683657:android:85b6475902d18f788cf198" />
-                  <option name="projectId" value="hrms-f723f83d" />
-                  <option name="projectNumber" value="853991683657" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
