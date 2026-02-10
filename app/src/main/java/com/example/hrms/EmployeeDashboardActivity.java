@@ -25,6 +25,7 @@ public class EmployeeDashboardActivity extends AppCompatActivity {
         LinearLayout actionPunch = findViewById(R.id.actionPunch);
         LinearLayout actionLeave = findViewById(R.id.actionLeave);
         LinearLayout actionAttendance = findViewById(R.id.actionAttendance);
+        LinearLayout actionProfile = findViewById(R.id.actionProfile);
 
         // TEMP (will be Firebase-driven later)
         boolean isPunchedIn = false;
@@ -46,5 +47,8 @@ public class EmployeeDashboardActivity extends AppCompatActivity {
 
         actionAttendance.setOnClickListener(v ->
                 startActivity(new Intent(this, AttendanceHistoryActivity.class)));
+
+        actionProfile.setOnClickListener(v ->
+                startActivity(new Intent(this, ProfileActivity.class)));
     }
 }
