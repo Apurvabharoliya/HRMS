@@ -29,7 +29,7 @@
             android:id="@+id/tvProfileRole"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Role: Employee"
+            android:text="Role"
             android:textSize="14sp"
             android:textColor="#E0E7FF"
             android:layout_marginTop="4dp"/>
@@ -52,10 +52,9 @@
             android:text="Email"
             android:textSize="14sp"
             android:textColor="#111827"/>
-
     </LinearLayout>
 
-    <!-- ACTIONS -->
+    <!-- EDIT PROFILE -->
     <LinearLayout
         android:id="@+id/actionEditProfile"
         android:layout_width="match_parent"
@@ -73,6 +72,25 @@
             android:textColor="#111827"/>
     </LinearLayout>
 
+    <!-- CHANGE PASSWORD -->
+    <LinearLayout
+        android:id="@+id/actionChangePassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="16dp"
+        android:background="@drawable/bg_action_tile">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Password"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#111827"/>
+    </LinearLayout>
+
+    <!-- LOGOUT -->
     <LinearLayout
         android:id="@+id/actionLogout"
         android:layout_width="match_parent"
@@ -91,3 +109,4 @@
     </LinearLayout>
 
 </LinearLayout>
+
