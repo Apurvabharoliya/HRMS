@@ -119,11 +119,11 @@ public class LoginActivity extends AppCompatActivity {
 
                         switch (role) {
 
-                            case "Admin":
+                            case "admin":
                                 startActivity(new Intent(this, AdminDashboardActivity.class));
                                 break;
 
-                            case "HR":
+                            case "hr":
                                 startActivity(new Intent(this, HRDashboardActivity.class));
                                 break;
 

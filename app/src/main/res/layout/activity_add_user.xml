@@ -54,6 +54,17 @@
             android:inputType="textPassword"
             android:layout_marginBottom="12dp" />
 
+        <!-- EMPLOYEE ID -->
+        <EditText
+            android:id="@+id/etEmployeeId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Employee ID (e.g., EMP001)"
+            android:padding="14dp"
+            android:background="@drawable/bg_input"
+            android:inputType="text"
+            android:layout_marginBottom="12dp" />
+
         <!-- DEPARTMENT -->
         <EditText
             android:id="@+id/etDepartment"
