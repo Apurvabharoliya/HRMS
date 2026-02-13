@@ -47,12 +47,12 @@ public class SplashActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
 
         new Handler().postDelayed(() -> {
-            if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+                startActivity(new Intent(this, LoginActivity.class));
+            } else {
                 // User already logged in
                 startActivity(new Intent(this, LoginActivity.class));
                 // role routing will be added later
-            } else {
-                startActivity(new Intent(this, LoginActivity.class));
             }
             finish();
         }, 2000);
