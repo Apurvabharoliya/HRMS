@@ -35,6 +35,7 @@ public class EmployeeDashboardActivity extends AppCompatActivity {
 
         LinearLayout actionPunch = findViewById(R.id.actionPunch);
         LinearLayout actionLeave = findViewById(R.id.actionLeave);
+        LinearLayout actionLeaveHistory = findViewById(R.id.actionLeaveHistory);
         LinearLayout actionAttendance = findViewById(R.id.actionAttendance);
         LinearLayout actionProfile = findViewById(R.id.actionProfile);
 
@@ -54,6 +55,9 @@ public class EmployeeDashboardActivity extends AppCompatActivity {
 
         actionLeave.setOnClickListener(v ->
                 startActivity(new Intent(this, ApplyLeaveActivity.class)));
+
+        actionLeaveHistory.setOnClickListener(v ->
+                startActivity(new Intent(this, LeaveHistoryActivity.class)));
 
         actionAttendance.setOnClickListener(v ->
                 startActivity(new Intent(this, AttendanceHistoryActivity.class)));

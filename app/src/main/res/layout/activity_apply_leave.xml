@@ -110,6 +110,15 @@
                 android:textColor="#374151"
                 android:layout_marginTop="6dp" />
 
+            <TextView
+                android:id="@+id/tvTotalDays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Leave Days: 0"
+                android:textSize="14sp"
+                android:textColor="#4F46E5"
+                android:layout_marginTop="8dp"/>
+
             <!-- REASON -->
             <TextView
                 android:id="@+id/tvReasonLabel"
@@ -132,6 +141,15 @@
                 android:textColor="#111827"
                 android:textColorHint="#9CA3AF"
                 android:layout_marginTop="6dp" />
+
+            <TextView
+                android:id="@+id/tvReasonCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0/300"
+                android:textSize="12sp"
+                android:textColor="#6B7280"
+                android:layout_marginTop="4dp"/>
 
             <!-- SUBMIT -->
             <Button
